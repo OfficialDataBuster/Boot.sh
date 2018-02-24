@@ -1,0 +1,36 @@
+#!/bin/bash
+SUDO=''
+if (( $EUID != 0 )); then
+    SUDO='sudo'
+	echo "Need to run as root."
+	$SUDO $0
+fi
+echo -e "\e[31mPress enter to start installation...\e[0m"
+echo ""
+read ok
+YUM_CMD=$(which yum)
+APT_GET_CMD=$(which apt-get)
+
+if [[ ! -z $YUM_CMD ]]; then
+    sudo yum update -y
+    sudo yum install gcc -y
+    sudo yum install perl -y
+    sudo yum install python -y
+    sudo yum install libwww-mechanize-shell-perl -y
+    sudo yum install perl-mechanize -y
+    sudo yum install libio-socket-ssl-perl -y
+    sudo yum install perl-doc -y
+elif [[ ! -z $APT_GET_CMD ]]; then
+    sudo apt-get update -y
+    sudo apt-get install gcc -y
+    sudo apt-get install perl -y
+    sudo apt-get install python -y
+    sudo apt-get install libwww-mechanize-shell-perl -y
+    sudo apt-get install perl-mechanize -y
+    sudo apt-get install libio-socket-ssl-perl -y
+    sudo apt-get install perl-doc -y
+fi
+sudo gcc x.c -o x
+chmod 777 *
+sudo rm x.c
+echo "Now type: rm install"
