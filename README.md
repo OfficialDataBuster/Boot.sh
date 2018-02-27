@@ -2,7 +2,7 @@
 Simple framework using three public DoS Attacks.
 
 ### Install
-**git clone https://github.com/OfficialDataBuster/Boot.sh.git; chmod +x install; sudo ./install**
+**git clone https://github.com/OfficialDataBuster/Boot.sh.git; chmod +x install; sudo ./install; rm install && clear; ./boot.sh**
 
 
 ### Usage
