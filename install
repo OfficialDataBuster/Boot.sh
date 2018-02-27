@@ -33,4 +33,5 @@ fi
 sudo gcc x.c -o x
 chmod 777 *
 sudo rm x.c
-echo "Now type: rm install"
+echo "You're all set."
+echo ""
