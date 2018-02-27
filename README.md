@@ -6,6 +6,6 @@ Simple framework using three public DoS Attacks.
 
 
 ### Usage
-* Usage Raw UDP: ./boot.sh rawudp [ip] [port] [time] [size]
-* Usage XerXes: ./boot.sh xerxes [hostname] [port]
-* Usage Slowloris: ./boot.sh slowloris [hostname] [port] [https or http]
+* Usage Raw UDP: **/boot.sh rawudp [ip] [port] [time] [size]**
+* Usage XerXes: **./boot.sh xerxes [hostname] [port]**
+* Usage Slowloris: .**/boot.sh slowloris [hostname] [port] [https or http]**
