@@ -29,6 +29,8 @@ elif [[ ! -z $APT_GET_CMD ]]; then
     sudo apt-get install perl-mechanize -y
     sudo apt-get install libio-socket-ssl-perl -y
     sudo apt-get install perl-doc -y
+else
+    echo "Idfk what to do, piss off, install a less shit dist."
 fi
 sudo gcc x.c -o x
 chmod 777 *
