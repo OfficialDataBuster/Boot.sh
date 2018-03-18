@@ -69,7 +69,7 @@ if [ $1 == 'rawudp' ]
 		fi
 		echo ""
 		echo -e "${BIRed}HIT CTRL+C TO EXIT.${Cyan}"
-		perl u $2 $3 $4 $5
+		perl u $2 $3 $5 $4
 fi
 if [ $1 == 'xerxes' ]
 	then
