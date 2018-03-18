@@ -63,21 +63,15 @@ if [ $1 == 'rawudp' ]
 			then
 				exit
 		fi
-		echo ""
-		echo -e "${BIRed}HIT CTRL+C TO EXIT.${Cyan}"
-		perl u $1 $2 $3 $4
-fi
-if [ $1 == 'xerxes' ]
-	then
-		if [ -z $2 ]
+		if [ -z $5 ]
 			then
 				exit
 		fi
 		echo ""
 		echo -e "${BIRed}HIT CTRL+C TO EXIT.${Cyan}"
-		./x $1 $2
+		perl u $2 $3 $4 $5
 fi
-if [ $1 == 'slowloris' ]
+if [ $1 == 'xerxes' ]
 	then
 		if [ -z $2 ]
 			then
@@ -89,11 +83,29 @@ if [ $1 == 'slowloris' ]
 		fi
 		echo ""
 		echo -e "${BIRed}HIT CTRL+C TO EXIT.${Cyan}"
-		if [ $3 == 'https' ]
+		./x $2 $3
+fi
+if [ $1 == 'slowloris' ]
+	then
+		if [ -z $2 ]
 			then
-				perl s -dns $1 -port $2 -https
+				exit
+		fi
+		if [ -z $3 ]
+			then
+				exit
+		fi
+		if [ -z $4 ]
+			then
+				exit
+		fi
+		echo ""
+		echo -e "${BIRed}HIT CTRL+C TO EXIT.${Cyan}"
+		if [ $4 == 'https' ]
+			then
+				perl s -dns $2 -port $3 -https
 		else
-			perl s -dns $1 -port $2
+			perl s -dns $2 -port $3
 		fi
 fi
 exit
