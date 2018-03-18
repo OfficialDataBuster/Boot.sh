@@ -7,7 +7,8 @@ if ($#ARGV != 3) {
   exit(1);
 }
 
-#for skids who don't know what they're doing, makes it a lot easier to determine which local computer the attack originated from
+#for skids who don't know what they're doing, makes it a lot easier for the feds
+#to determine which local computer the attack originated from
 my $local_ip_snitch = `hostname -I`;
 
 my ($ip,$port,$size,$time) = @ARGV;
