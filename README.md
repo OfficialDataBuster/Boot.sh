@@ -1,5 +1,5 @@
 # Boot.sh
-Simple framework using three public DoS Attacks.
+Simple, free, open-source framework using three public DoS Attacks.
 
 ### Install
 ```sh
