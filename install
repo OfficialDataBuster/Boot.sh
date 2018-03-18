@@ -37,6 +37,6 @@ fi
 sudo gcc inc/x.c -o inc/x
 chmod 777 *
 chmod 777 inc/*
-sudo rm x.c
+sudo rm inc/x.c
 echo "You're all set."
 echo ""
