@@ -41,9 +41,9 @@ ${Color_Off}"
 echo ""
 echo -e "${IGreen}Welcome to Boot.sh;"
 echo ""
-echo -e "Usage Raw UDP: ${Red}./boot.sh rawudp [ip] [port] [time] [size] [invisible (1=yes, 0=no; default=0)]${IGreen}"
-echo -e "Usage XerXes: ${Red}./boot.sh xerxes [hostname] [port] [time] [invisible (1=yes, 0=no; default=0)]${IGreen}"
-echo -e "Usage Slowloris: ${Red}./boot.sh slowloris [hostname] [port] [time] [https or http] [invisible (1=yes, 0=no; default=0)]${Color_Off}"
+echo -e "Usage Raw UDP: ${Red}./boot.sh rawudp [ip] [port] [time] [size] [invisible (1/0)]${IGreen}"
+echo -e "Usage XerXes: ${Red}./boot.sh xerxes [hostname] [port] [time] [invisible (1/0)]${IGreen}"
+echo -e "Usage Slowloris: ${Red}./boot.sh slowloris [hostname] [port] [time] [https or http] [invisible (1/0)]${Color_Off}"
 echo ""
 if [ -z $1 ]
 	then
