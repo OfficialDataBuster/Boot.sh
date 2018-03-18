@@ -47,7 +47,7 @@ void broke(int s) {
 	// do nothing
 }
 
-//strength change this according to your own computer's specs
+//strength, change this according to your own computer's specs
 #define CONNECTIONS 8
 #define THREADS 48
 
