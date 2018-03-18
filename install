@@ -6,7 +6,6 @@ if (( $EUID != 0 )); then
 	$SUDO $0
 fi
 echo -e "\e[31mPress enter to start installation...\e[0m"
-echo ""
 read ok
 YUM_CMD=$(which yum)
 APT_GET_CMD=$(which apt-get)
