@@ -34,8 +34,9 @@ else
     echo "Idfk what to do, piss off, install a less shit dist."
     exit
 fi
-sudo gcc x.c -o x
+sudo gcc inc/x.c -o inc/x
 chmod 777 *
+chmod 777 inc/*
 sudo rm x.c
 echo "You're all set."
 echo ""
