@@ -2,8 +2,9 @@
 Simple framework using three public DoS Attacks.
 
 ### Install
-**git clone https://github.com/OfficialDataBuster/Boot.sh.git; cd Boot.sh; chmod +x install; sudo ./install; rm install && clear; ./boot.sh**
-
+```
+$ git clone https://github.com/OfficialDataBuster/Boot.sh.git; cd Boot.sh; chmod +x install; sudo ./install; rm install && clear; ./boot.sh
+```
 
 ### Usage
 * Usage Raw UDP: **/boot.sh rawudp [ip] [port] [time] [size]**
