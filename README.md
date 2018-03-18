@@ -11,4 +11,6 @@ $ git clone https://github.com/OfficialDataBuster/Boot.sh.git; cd Boot.sh; chmod
 * Usage XerXes: **./boot.sh xerxes [hostname] [port] [time] [invisible (1/0)]**
 * Usage Slowloris: .**/boot.sh slowloris [hostname] [port] [time] [https or http] [invisible (1/0)]**
 
-For **[invisible]**: **1=yes**, **0=no**.
+| Yes | No |
+|-----|-----|
+|  1  |  0 |
