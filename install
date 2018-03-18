@@ -19,6 +19,7 @@ if [[ ! -z $YUM_CMD ]]; then
     sudo yum install perl-mechanize -y
     sudo yum install libio-socket-ssl-perl -y
     sudo yum install perl-doc -y
+    sudo yum install coreutils -y
 elif [[ ! -z $APT_GET_CMD ]]; then
     sudo apt-get update -y
     sudo apt-get install gcc -y
@@ -28,6 +29,7 @@ elif [[ ! -z $APT_GET_CMD ]]; then
     sudo apt-get install perl-mechanize -y
     sudo apt-get install libio-socket-ssl-perl -y
     sudo apt-get install perl-doc -y
+    sudo apt-get install coreutils -y
 else
     echo "Idfk what to do, piss off, install a less shit dist."
     exit
