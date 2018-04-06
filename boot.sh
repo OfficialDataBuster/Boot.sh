@@ -132,7 +132,7 @@ if [ $1 == 'slowloris' ]
 		fi
 		if [ -z $4 ]
 			then
-				echo "set time and method [http/https"
+				echo "set time and method [http/https]"
 				exit
 		fi
 		if [ -z $5 ]
